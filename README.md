@@ -1,13 +1,9 @@
-# crontab-debug
-A simple how-to guide on frustration free debugging of cron entries
+### crontab-debug : A simple how-to guide on frustration free debugging of cron entries
 
-
-#!/bin/bash
-
-#Step-1. put following entry in crontab 
-#   * * * * * /usr/bin/env > /data/app/appd/Controller/bin/cron-env
-
-#step-2. Once the file is created remove the crontab entry 
-
-#step-3. run the command : run-as-cron full-path-to-script /usr/bin/env -i $(cat cron-env) "$@"
-
+     Step-1 : put the following entry in crontab. This will save cron runtime environments in cron-env file
+     * * * * * /usr/bin/env > /user/home/cron-env
+     
+     Step-2 : Once the file is created, remove the crontab entry
+     
+     Step-3 : run the following command. Here script-file is the name of the script you want to debug.
+     /usr/bin/env -i $(cat /user/home-cron-env) script-file
