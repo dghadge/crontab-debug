@@ -1,5 +1,7 @@
 ### crontab-debug : A simple how-to guide on frustration free debugging of cron entries
-
+    Many times unix scripts you execute don't neccesarily work when added to crontab because of difference in env. 
+    These steps lets you use cron env when running scripts in your shell env. 
+    
      Step-1 : put the following entry in crontab. This will save cron runtime environment in cron-env file
      * * * * * /usr/bin/env > /user/home/cron-env
      
